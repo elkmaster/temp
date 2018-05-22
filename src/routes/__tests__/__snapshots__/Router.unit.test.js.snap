@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Router component should render correctly 1`] = `
+<div>
+  <Switch>
+    <DefaultRoute
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <DefaultRoute
+      component={[Function]}
+      path="/comments"
+    />
+    <Route
+      component={[Function]}
+    />
+  </Switch>
+</div>
+`;

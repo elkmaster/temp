@@ -1,0 +1,11 @@
+image: node:8.11.1
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script:
+          - yarn global add codecov
+          - yarn install
+          - yarn test:codecov

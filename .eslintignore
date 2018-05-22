@@ -1,0 +1,6 @@
+__tests__
+setupTests.js
+coverage/
+build/
+/scripts
+config/

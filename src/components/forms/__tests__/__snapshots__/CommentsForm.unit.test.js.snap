@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentsForm should render correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <Field
+    component={[Function]}
+    name="comment"
+    placeholder="Enter some comment"
+  />
+  <button
+    type="submit"
+  >
+    Add comment
+  </button>
+</form>
+`;

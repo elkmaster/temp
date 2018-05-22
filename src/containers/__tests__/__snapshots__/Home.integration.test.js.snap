@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home container should render correctly 1`] = `
+<Connect(Home)
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Home
+    data={Object {}}
+    fetchWeather={[Function]}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <div
+      className="container"
+    >
+      <p
+        className="description"
+      >
+        This is Home component.
+      </p>
+      <p
+        className="description"
+      >
+        Below a real API request with Cherkasy weather.
+      </p>
+      <p
+        className="weather-data"
+      >
+        Temperature in 
+        <span
+          className="city"
+        />
+         - 
+        <span
+          className="temp"
+        />
+      </p>
+    </div>
+  </Home>
+</Connect(Home)>
+`;

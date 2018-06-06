@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { reset } from 'redux-form';
+import { Redirect } from 'react-router-dom';
 
 import '../styles/components/home.css';
 
@@ -16,6 +17,10 @@ export class Login extends Component {
     register: PropTypes.func.isRequired,
   };
 
+  state = {
+    redirectToReferrer: false,
+  }
+
   submitRegForm = async (form) => {
     const { register, reset } = this.props;
     await register(form);
@@ -26,10 +31,17 @@ export class Login extends Component {
     const { login, reset } = this.props;
     await login(form);
     reset('loginForm');
+    this.setState({ redirectToReferrer: true });
   };
 
   render() {
-    // const { data } = this.props;
+    const { from } = this.props.location.state || { from: { pathname: '/' } };
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer === true) {
+      return <Redirect to={from} />;
+    }
+
     return (
       <div className="container">
         <p>Login or Register</p>

@@ -13,7 +13,7 @@ export const LoginForm = ({ handleSubmit }) => (
     <Field
       name="password"
       component="input"
-      type="text"
+      type="password"
       placeholder="password"
     />
     <button type="submit">Login</button>

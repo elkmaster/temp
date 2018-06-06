@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegForm should render correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <Field
+    component="input"
+    name="first_name"
+    placeholder="First name"
+    type="text"
+  />
+  <Field
+    component="input"
+    name="last_name"
+    placeholder="Last name"
+    type="text"
+  />
+  <Field
+    component="input"
+    name="email"
+    placeholder="email"
+    type="email"
+  />
+  <Field
+    component="input"
+    name="password"
+    placeholder="pass"
+    type="password"
+  />
+  <button
+    type="submit"
+  >
+    Sign Up
+  </button>
+</form>
+`;

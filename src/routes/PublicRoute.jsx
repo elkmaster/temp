@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 
-const DefaultRoute = ({ component: Component, ...rest }) => (
+const PublicRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props => (
@@ -18,8 +18,8 @@ const DefaultRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-DefaultRoute.propTypes = {
+PublicRoute.propTypes = {
   component: PropTypes.func.isRequired,
 };
 
-export default DefaultRoute;
+export default PublicRoute;

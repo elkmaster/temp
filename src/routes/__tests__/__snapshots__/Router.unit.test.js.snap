@@ -3,14 +3,22 @@
 exports[`Router component should render correctly 1`] = `
 <div>
   <Switch>
-    <DefaultRoute
+    <PublicRoute
       component={[Function]}
       exact={true}
       path="/"
     />
-    <DefaultRoute
+    <PublicRoute
       component={[Function]}
       path="/comments"
+    />
+    <PublicRoute
+      component={[Function]}
+      path="/login"
+    />
+    <Connect(PrivateRoute)
+      component={[Function]}
+      path="/cabinet"
     />
     <Route
       component={[Function]}

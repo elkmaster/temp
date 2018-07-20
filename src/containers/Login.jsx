@@ -12,14 +12,6 @@ import LoginForm from '../components/forms/LoginForm';
 import { login, register } from '../actions/auth';
 
 export class Login extends Component {
-  static propTypes = {
-    login: PropTypes.func.isRequired,
-    register: PropTypes.func.isRequired,
-  };
-
-  state = {
-    redirectToReferrer: false,
-  }
 
   submitRegForm = async (form) => {
     const { register, reset } = this.props;
@@ -31,14 +23,13 @@ export class Login extends Component {
     const { login, reset } = this.props;
     await login(form);
     reset('loginForm');
-    this.setState({ redirectToReferrer: true });
   };
 
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
-    const { redirectToReferrer } = this.state;
+    const { loggedIn } = this.props.auth;
 
-    if (redirectToReferrer === true) {
+    if (loggedIn === true) {
       return <Redirect to={from} />;
     }
 
@@ -51,5 +42,14 @@ export class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  auth: PropTypes.shape({
+    loggedIn: PropTypes.bool.isRequired,
+  }).isRequired,
+  login: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = ({ auth }) => ({ auth });
 export default connect(mapStateToProps, { login, register, reset })(Login);

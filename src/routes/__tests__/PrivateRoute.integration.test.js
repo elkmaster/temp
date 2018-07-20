@@ -10,11 +10,9 @@ import Footer from '../../components/layout/Footer';
 
 const setup = (loggedIn, propsOverrides) => {
 
-
   const store = mockStore({
     auth: {loggedIn}
   });
-
 
   const props = Object.assign({
       component: jest.fn(() => <p>Hello World</p>),

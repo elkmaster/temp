@@ -14,23 +14,22 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.LOGIN_REQUEST:
-    case types.CHECK_LOGIN_REQUEST:
-      return { ...state, isFetching: true };
+      return { ...initialState, isFetching: true };
     case types.LOGIN_SUCCESS:
-    case types.CHECK_LOGIN_SUCCESS:
       return {
-        ...state,
+        ...initialState,
         loggedIn: true,
         isFetching: false,
         user: action.payload.user,
       };
     case types.LOGIN_FAILURE:
-    case types.CHECK_LOGIN_FAILURE:
       return {
-        ...state,
-        loggedIn: false,
-        isFetching: false,
+        ...initialState,
         error: action.payload,
+      };
+    case types.LOGOUT:
+      return {
+        ...initialState,
       };
     default:
       return state;

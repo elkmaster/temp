@@ -1,8 +1,8 @@
 import axios from 'axios';
-// import vars from '../config/vars';
 import store from '../store/index';
 import { logout } from '../actions/auth';
-// import {showNotification} from 'Actions/notification';
+
+// WIP!
 
 const HTTP = (config, authenticated = false) => {
   const api = axios.create({

@@ -25,12 +25,12 @@ export const checkLogin = () => async (dispatch) => {
   const refreshToken = localStorage.getItem('refreshToken');
   if (refreshToken) {
     try {
-      dispatch(() => ({ type: types.CHECK_LOGIN_REQUEST }));
+      dispatch(() => ({ type: types.LOGIN_REQUEST }));
       const payload = await authService.refreshToken(refreshToken);
       localStorage.setItem('authToken', payload.tokens.auth);
       localStorage.setItem('refreshToken', payload.tokens.refresh);
       dispatch({
-        type: types.CHECK_LOGIN_SUCCESS,
+        type: types.LOGIN_SUCCESS,
         payload,
       });
     } catch (err) {
@@ -38,16 +38,17 @@ export const checkLogin = () => async (dispatch) => {
       localStorage.setItem('refreshToken', '');
       localStorage.setItem('authToken', '');
       dispatch(err => ({
-        type: types.CHECK_LOGIN_FAILURE,
+        type: types.LOGIN_FAILURE,
         payload: err,
       }));
     }
   }
 };
 
-export const logout = () => {
+export const logout = () => (dispatch) => {
   localStorage.setItem('authToken', '');
   localStorage.setItem('refreshToken', '');
+  dispatch(() => ({ type: types.LOGOUT }));
 };
 
 export const register = form => async (dispatch) => {
